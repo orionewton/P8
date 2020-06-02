@@ -1,0 +1,40 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<<header class="smallheader text-center text-white d-flex">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="text-uppercase">
+                    <strong>Connexion</strong>
+                </h1>                
+            </div>
+        </div>
+    </div>
+</header>
+<section id="connexion" class="text-center d-flex">
+    <div class="container my-auto">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <h3 class="border-bottom mb-4">Connectez-vous à votre compte Pur Beurre!</h3>
+
+            <div class="fieldWrapper my-label">
+                <label for="{{ form.username.id_for_label }}">Nom d'utilisateur</label>
+                {{ form.username }}
+            </div>
+
+            <div class="fieldWrapper my-label">
+                <label for="{{ form.password.id_for_label }}">Mot de passe</label>
+                {{ form.password }}
+            </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-primary btn-xl mt-50" type="submit">Connexion</button>
+            </div>
+        </form>
+        <div>           
+                Besoin d'un compte? <a href="{% url 'register' %}">S'inscrire</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

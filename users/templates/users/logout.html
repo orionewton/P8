@@ -1,0 +1,13 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<header class="masthead text-center text-white d-flex">
+	<div class="container my-auto">
+	    <h2>Vous êtes déconnecté</h2>
+	    <div>
+	        <small>
+	            vous avez un compte ?<a href="{% url 'login' %}">connectez-vous</a>
+	        </small>
+	    </div>
+	</div>
+</header>
+{% endblock content %}
