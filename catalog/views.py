@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
+from django.views.generic import DetailView
 
 from .models import Product, Category, UserFavorite
 # Create your views here.
@@ -66,20 +67,9 @@ def search(request):
 
     return render(request, 'catalog/search.html', context)
 
-
-def product_detail(request, product_id):
-
-    product = Product.objects.get(id=product_id)
-
-    context = {
-        'name': product.name,
-        'title': 'Informations nutritionnelles',
-        'product': product,
-        'nutrition_image': product.nutrition_image,
-    }
-
-    return render(request, 'catalog/product_detail.html', context)
-
+class ProductDetail(DetailView):
+    model = Product
+    template = 'catalog/product_detail.html'
 
 @login_required
 def add_favorite(request, product_id):
