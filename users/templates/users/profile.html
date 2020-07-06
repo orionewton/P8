@@ -35,15 +35,15 @@
                     <h1>Modifier les informations<span>Envie d'un nouveau pseudo ?</span></h1>
                     <div class="section"><span>1</span>Pseudo actuel : {{ user.username }}</div>
                     <div class="inner-wrap">
-                        <h2 class="">{{ u_form.username|as_crispy_field }}</h2>
+                        <h2 class="">{{ u_form.username }}</h2>
                     </div>
                     <div class="section"><span>2</span>Adresse actuelle : {{ user.email }}</div>
                     <div class="inner-wrap">
-                        <p class="">{{ u_form.email|as_crispy_field }}</p>
+                        <p class="">{{ u_form.email }}</p>
                     </div>
                     <div class="section"><span>3</span>Image du profil</div>
                     <div class="inner-wrap">
-                        <p class="">{{ p_form|crispy }}</p>
+                        <p class="">{{ p_form }}</p>
                     </div>
                     <div class="section"><span>4</span>Validation</div>
                     <div class="inner-wrap text-center">
