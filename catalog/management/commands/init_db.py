@@ -59,8 +59,6 @@ class Command(BaseCommand):
                         picture=picture,
                         nutrition_image=nutrition_image)
                     i+=1
-                if (i==1):
-                    print(name)
 
                 except KeyError:
                     pass
