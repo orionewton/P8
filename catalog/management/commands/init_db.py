@@ -68,6 +68,6 @@ class Command(BaseCommand):
 
                 except IntegrityError:
                     pass
-        print(i," prodcuts add in DB")
+        print(i," products add in DB")
     def handle(self, *args, **options):
         self.create_db()
