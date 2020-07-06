@@ -23,7 +23,7 @@ class Command(BaseCommand):
         ]
 
     def create_db(self):
-
+        i=0
         for category in self.CATEGORIES:
             new_category = Category.objects.create(name=category)
             params = {
@@ -58,6 +58,7 @@ class Command(BaseCommand):
                         url=url,
                         picture=picture,
                         nutrition_image=nutrition_image)
+                    i+=1
 
                 except KeyError:
                     pass
@@ -67,6 +68,6 @@ class Command(BaseCommand):
 
                 except IntegrityError:
                     pass
-
+        print(i," prodcuts add in DB")
     def handle(self, *args, **options):
         self.create_db()
